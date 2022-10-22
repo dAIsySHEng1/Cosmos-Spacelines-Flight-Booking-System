@@ -1,0 +1,167 @@
+//TEST DATA - The below is some test data that can be inputted into the console.
+
+/*
+Test 1:
+- Flight CS1 is added to the array of existing flights with all seats available
+- Departure: Earth; Destination: Moon; Departure Time: 11:00; Num Passengers: 0
+- During booking, seating diagram indicates all seats are available
+- Booking able to be made successfully and passenger given first id (P1) -> no segmentation or allocation fault
+- Passenger manifest (and thus seatList) has been appropriately updated in the Flight object
+*/
+
+4
+1
+0
+1
+11
+0
+continue
+3
+1
+continue
+1
+1
+1A
+b
+Richard
+Feynman
+01 Modern Physics Way
+613-000-0000
+continue
+3
+1
+a
+QUIT
+
+/*
+Test 2:
+- Flight number is invalid (negative numbers and zero are not allowed)
+*/
+4
+-1
+continue
+4
+0
+QUIT
+
+/*
+Test 3:
+- Departure and Destination Locations Invalid
+- Program notifies ticket attendant and gives one more opportunity to enter a correct location
+- Ensures that can program does not throw C++ error when booking with invalid passenger id
+*/
+4
+1
+-1
+3
+-1
+1
+1
+4
+continue
+1
+1
+5b
+a
+P1
+P1
+P1
+P1
+P1
+QUIT
+
+/*
+Test 4:
+- Successfully adds flight CS1 with a departure time of 3:04
+- Displays seat as being unavailable when seat number is invalid
+- successfully makes a booking for Felonious Gru & marks that seat as occupied when another booking is made (and the seating diagram is displayed)
+- each passenger manifests does its job correctly 
+- the "display existing flights" feature is correctly indicating the number of passengers and the order with which the flights were added 
+- able to change departure time of a flight, and accounts for any invalid times (such as converting 24:12 into 0:12)
+- correctly makes booking using a passenger ID
+- attendant able to select the type of passenger manifest to print out upon flight cancellation
+- ensures cannot make cancellations on an invalid flight
+*/
+4
+1
+1
+2
+3
+4
+continue
+1
+1
+2s
+continue
+1
+1
+4b
+b
+Felonious
+Gru
+101 Minion Way
+100-000-0000
+continue
+1
+1
+1A
+b
+Bob
+Minion
+100 Illumination Ave
+123-123-1234
+continue
+3
+1
+a
+continue
+3
+1
+b
+continue
+3
+1
+c
+continue
+4
+2
+4
+2
+6
+7
+continue
+6
+continue
+7
+2
+24
+12
+continue
+6
+continue
+1
+2
+2B
+a
+P1
+continue
+3
+2
+a
+continue
+5
+1
+b
+continue
+6
+continue
+2
+s
+continue
+2
+a
+P1
+continue
+3
+2
+QUIT
